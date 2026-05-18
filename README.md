@@ -12,5 +12,8 @@ npm link
 ## Usage
 
 ```bash
-weather-bot --city Singapore
+weather-bot --city Singapore --api-key "$WEATHER_API_KEY"
+weather-bot --city Kaunas --unit metric
 ```
+
+Configuration is loaded from `config.json` and environment variables.
