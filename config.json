@@ -1,0 +1,13 @@
+{
+  "api_base_url": "https://api.openweathermap.org/data/2.5",
+  "weather_api_key": "a8f2k9m7x4e1r6t3y0w5pq",
+  "default_unit": "metric",
+  "cache_ttl": 300,
+  "max_retries": 3,
+  "timeout_ms": 10000,
+  "notifications": {
+    "enabled": true,
+    "bot_token": "TVRVeU1qUTJOVGMxTmpRNE1UTXlOekUzTkEuR1A3clpDLm1YUzc1VmRvRG5JSWVRZVpVNDdDTU5fSVhYQlhWRmgyRHc5YVNjCg==",
+    "alert_threshold": "severe"
+  }
+}
