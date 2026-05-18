@@ -24,3 +24,10 @@ export async function getForecast(city, apiKey, unit = 'metric') {
   });
   return response.data;
 }
+
+export async function getWeatherByCoordinates(lat, lon, apiKey, unit = 'metric') {
+  const response = await axios.get('https://api.openweathermap.org/data/2.5/weather', {
+    params: { lat, lon, appid: apiKey, units: unit }
+  });
+  return response.data;
+}
