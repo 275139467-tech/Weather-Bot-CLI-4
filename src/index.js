@@ -1,14 +1,20 @@
 #!/usr/bin/env node
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
+import { getCurrentWeather } from './weather.js';
 
 const argv = yargs(hideBin(process.argv))
   .option('city', {
     type: 'string',
     describe: 'City name to check'
   })
-  .demandOption('city')
+  .option('api-key', {
+    type: 'string',
+    describe: 'OpenWeatherMap API key'
+  })
+  .demandOption(['city', 'api-key'])
   .help()
   .parseSync();
 
-console.log(`Checking weather for ${argv.city}...`);
+const data = await getCurrentWeather(argv.city, argv.apiKey);
+console.log(`${data.name}: ${data.main.temp}C, ${data.weather[0].description}`);
