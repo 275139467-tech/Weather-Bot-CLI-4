@@ -17,3 +17,10 @@ export async function getCurrentWeather(city, apiKey, unit = 'metric', options =
   }
   throw new Error(`Weather lookup failed: ${lastError.message}`);
 }
+
+export async function getForecast(city, apiKey, unit = 'metric') {
+  const response = await axios.get('https://api.openweathermap.org/data/2.5/forecast', {
+    params: { q: city, appid: apiKey, units: unit }
+  });
+  return response.data;
+}
