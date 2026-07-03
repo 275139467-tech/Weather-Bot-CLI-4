@@ -17,4 +17,4 @@ const argv = yargs(hideBin(process.argv))
 const data = await withSpinner(`Checking weather for ${argv.city}`, () =>
   getCurrentWeather(argv.city, argv.apiKey, argv.unit)
 );
-console.log(argv.json ? JSON.stringify(data, null, 2) : formatWeather(data));
+console.log(argv.json ? JSON.stringify(data, null, 2) : formatWeather(data, argv.unit));
