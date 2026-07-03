@@ -12,6 +12,8 @@ export async function getCurrentWeather(city, apiKey, unit = 'metric', options =
       return response.data;
     } catch (error) {
       lastError = error;
+      const status = error.response?.status;
+      if (status === 401 || status === 404) throw error;
       if (attempt === retries) break;
     }
   }
